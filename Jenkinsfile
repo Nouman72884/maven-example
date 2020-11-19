@@ -12,7 +12,7 @@ pipeline {
             rtUpload (
                 buildName: JOB_NAME,
                 buildNumber: BUILD_NUMBER,
-                serverId: SERVER_ID, // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+                serverId: jenkins-artifactory, // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
                 spec: '''{
                             "files": [
                                 {
