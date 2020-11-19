@@ -8,11 +8,10 @@ pipeline {
         stage('Build Job1') {
             steps {
               script {
-
                   def  build_job: "001_job" 
-                   def build_num1 = build_job.getNumber()
-                 BUILD_NUM = "${build_num1}"
-                 echo BUILD_NUM  //build number of oo1/job
+                  def build_num1 = build_job.getNumber()
+                  BUILD_NUM = "${build_num1}"
+                  echo BUILD_NUM  //build number of oo1/job
             }
             }
         }  
