@@ -21,7 +21,12 @@ pipeline {
                             "files": [
                                 {
                                     "pattern": "pom.xml",
-                                    "target": "wajahat/pom.xml",
+                                    "target": "jenkins-jar-files/pom.xml",
+                                    "recursive": "false"
+                                },
+                                {
+                                    "pattern": "multi1",
+                                    "target": "jenkins-jar-files/multi1",
                                     "recursive": "false"
                                 }
                             ]
@@ -29,12 +34,12 @@ pipeline {
                 )
         }
     }
-        // stage ('Publish build info') {
-        //     steps {
-        //         rtPublishBuildInfo (
-        //             serverId: "jenkins-artifactory"
-        //         )
-        //     }
-        // }
+        stage ('Publish build info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "jenkins-artifactory"
+                )
+            }
+        }
     }
 }
