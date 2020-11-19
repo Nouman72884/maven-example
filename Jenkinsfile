@@ -1,16 +1,21 @@
 pipeline {
+    environment {
+        BUILD_NUM = ''
+
+    }
     agent any
     stages {
         stage('Build Job1') {
             steps {
               script {
 
-                   build job: "001_job" 
-                   $build_001= env.BUILD_NUMBER of 001_job                  
-                   echo env.BUILD_NUMBER //this echos the build number of this job and not 001_job
+                  def  build job: "001_job" 
+                   def build_num1 = build_job.getNumber()
+                 BUILD_NUM = "${build_num1}"
+                 echo BUILD_NUM  //build number of oo1/job
             }
-            } 
-        } 
+            }
+        }  
         stage ('Clone') {
             steps {
                 git url: "https://github.com/Nouman72884/maven-example.git"
