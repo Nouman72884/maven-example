@@ -10,21 +10,16 @@ pipeline {
         stage ('Publish Artifacts') {
         steps {
             rtUpload (
-                serverId: jenkins-artifactory, // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
-                spec: '''{
+                serverId: "jenkins-artifactory", // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+                spec: """{
                             "files": [
                                 {
                                     "pattern": "pom.xml",
                                     "target": "eurus-docker/pom.xml",
                                     "recursive": "false"
                                 }
-                                // {
-                                //     "pattern": "$WORKSPACE/Digital-Twin-App/frontend/frontend.tar.gz",
-                                //     "target": "DigitalTwinWebApp-Frontend/",
-                                //     "recursive": "false"
-                                // }
                             ]
-                    }'''    
+                    }"""   
                 )
         }
     }
