@@ -15,7 +15,7 @@ pipeline {
                             "files": [
                                 {
                                     "pattern": "pom.xml",
-                                    "target": "pom.xml",
+                                    "target": "wajahat/pom.xml",
                                     "recursive": "false"
                                 }
                             ]
