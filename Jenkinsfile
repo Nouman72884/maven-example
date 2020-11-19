@@ -12,7 +12,6 @@ pipeline {
                 rtServer (
                     id: "jenkins-artifactory",
                     url: "http://artifactory.eurustechnologies.info/artifactory",
-                    credentialsId: CREDENTIALS
                 )
 
                 rtMavenDeployer (
