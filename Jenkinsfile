@@ -9,7 +9,7 @@ pipeline {
             steps {
               script {
 
-                  def  build job: "001_job" 
+                  def  build_job: "001_job" 
                    def build_num1 = build_job.getNumber()
                  BUILD_NUM = "${build_num1}"
                  echo BUILD_NUM  //build number of oo1/job
