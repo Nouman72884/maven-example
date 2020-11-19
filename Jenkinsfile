@@ -14,6 +14,8 @@ pipeline {
         stage ('Publish Artifacts') {
         steps {
             rtUpload (
+                buildName: JOB_NAME,
+                buildNumber: BUILD_NUMBER,
                 serverId: "jenkins-artifactory", // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
                 spec: """{
                             "files": [
@@ -27,12 +29,12 @@ pipeline {
                 )
         }
     }
-        stage ('Publish build info') {
-            steps {
-                rtPublishBuildInfo (
-                    serverId: "jenkins-artifactory"
-                )
-            }
-        }
+        // stage ('Publish build info') {
+        //     steps {
+        //         rtPublishBuildInfo (
+        //             serverId: "jenkins-artifactory"
+        //         )
+        //     }
+        // }
     }
 }
