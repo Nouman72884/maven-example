@@ -15,7 +15,7 @@ pipeline {
                             "files": [
                                 {
                                     "pattern": "pom.xml",
-                                    "target": "eurus-docker/pom.xml",
+                                    "target": "pom.xml",
                                     "recursive": "false"
                                 }
                             ]
