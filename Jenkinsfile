@@ -10,7 +10,7 @@ pipeline {
         stage ('Publish Artifacts') {
         steps {
             rtUpload (
-                serverId: 'jenkins-artifactory', // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+                serverId: jenkins-artifactory, // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
                 spec: '''{
                             "files": [
                                 {
